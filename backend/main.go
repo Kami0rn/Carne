@@ -35,58 +35,18 @@ func main() {
 
 	r.DELETE("/customers/:id", controller.DeleteCustomer)
 
+	r.GET("/requests", controller.ListCustomers)
 
-	// Customer Routes
+	r.GET("/request/:id", controller.GetCustomer)
 
-	r.GET("/riders", controller.ListRiders)
+	// r.GET("/customer/hash/:hashed_password", controller.GetCustomerByHash)
 
-	r.GET("/rider/:id", controller.GetRider)
+	r.POST("/requests", controller.CreateCustomer)
 
-	r.GET("/rider/hash/:hashed_password", controller.GetRiderByHash)
+	r.PATCH("/requests", controller.UpdateCustomer)
 
-	r.POST("/riders", controller.CreateRider)
-
-	r.PATCH("/riders", controller.UpdateRider)
-
-	r.DELETE("/riders/:id", controller.DeleteRider)
-
-
-	// Payment Routes
-	// r.GET("/payments", controller.ListPayments)
-
-	// r.GET("/payment/:id", controller.GetPayment)
-
-	// r.POST("/payments", controller.CreatePayment)
-
-	// r.PATCH("/payments", controller.UpdatePayment)
-
-	// r.DELETE("/payments/:id", controller.DeletePayment)
-
-
-	//Food Routes
-
-	r.GET("/foods", controller.ListFoods)
-
-	r.GET("/food/:id", controller.GetFood)
-
-	r.POST("/foods", controller.CreateFood)
-
-	r.PATCH("/foods", controller.UpdateFood)
-
-	r.DELETE("/foodsdel/:id", controller.DeleteFood)
-
+	r.DELETE("/requests/:id", controller.DeleteCustomer)
 	
-
-	// r.GET("/orders", controller.ListPayments)
-
-	// r.GET("/order/:id", controller.GetPayment)
-
-	// r.POST("/orders", controller.CreatePayment)
-
-	// r.PATCH("/orders", controller.UpdatePayment)
-
-	// r.DELETE("/orders/:id", controller.DeletePayment)
-	// Run the server
 
 	r.Run("localhost: " + PORT)
 
